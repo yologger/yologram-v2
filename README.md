@@ -1,7 +1,10 @@
 # yologram-v2
 
-## web
+## frontend
 - Next.js
 
-## api
+## backend
 - FastAPI
+
+## infra
+- AWS App Runner (고려 중)

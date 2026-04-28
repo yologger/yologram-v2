@@ -4,34 +4,35 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-yologram-v2는 모노레포 구조의 프로젝트로, 프론트엔드(Next.js)와 백엔드(FastAPI) 두 개의 서브 프로젝트로 구성.
+yologram-v2는 모노레포 구조의 프로젝트로, 프론트엔드(Next.js), 백엔드(FastAPI), 인프라 세 개의 서브 프로젝트로 구성.
 
 ## Repository Structure
 
-- web/ — Next.js 기반 프론트엔드 (패키지명: yologram-v2-web)
-- api/ — FastAPI 기반 백엔드 API (패키지명: yologram-v2-api)
+- frontend/ — Next.js 기반 프론트엔드 (패키지명: yologram-v2-web)
+- backend/ — FastAPI 기반 백엔드 API (패키지명: yologram-v2-api)
+- infra/ — 인프라 설정 (AWS App Runner 고려 중)
 
 ## Build & Run
 
-### Web (web/)
+### Frontend (frontend/)
 ```
-cd web
+cd frontend
 npm install
 npm run dev        # 개발 서버
 npm run build      # 프로덕션 빌드
 npm run lint       # 린트
 ```
 
-### API (api/)
+### Backend (backend/)
 ```
-cd api
+cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload   # 개발 서버
 ```
 
 ## CI/CD
 
-- GitHub Actions 기반. api/, web/ 경로별로 별도 워크플로우가 트리거됨.
+- GitHub Actions 기반. backend/, frontend/ 경로별로 별도 워크플로우가 트리거됨.
 - 배포 대상: AWS App Runner (고려 중)
 
 ## Rules
